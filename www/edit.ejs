@@ -1,0 +1,34 @@
+<section id="login">
+    <div class="login">
+
+        <% for(var i = 0; i < contacts.length; i++) { %>
+                <form class="tr" action="handleForm">
+                    <input type="text" id="username" name="username" class="td" readonly value= <%= contacts[i].username %>>
+                    <input type="text" id="emailId" name="emailId" class="td" readonly value= <%= contacts[i].emailId %>>
+                    <input type="text" id="Age" name="Age" class="td" readonly value= <%= contacts[i].Age %>>
+                    <input type="text" id="Address" name="Address" class="td" readonly value= <%= contacts[i].Address %>>
+                    <input id="DOB" name="DOB" class="td" readonly value= <%= contacts[i].DOB %>>
+                    <input id="createdAt" name="createdAt" class="td" readonly value= <%= contacts[i].createdAt %>>
+                    <input id="updatedAt" name="updatedAt" class="td" readonly value= <%= contacts[i].updatedAt %>>
+                </form>
+        <% } %>     
+    </div>
+    <form action ="updateuser" method = "post">
+        <div class="container">
+            <label for="username"><b>Username</b></label>
+            </br><input type="text" placeholder="Enter Name"  name="username" >
+            </br><label for="Age"><b>Age</b></label>
+            </br><input type="number" placeholder="Your Age" name="Age" min="1" max="100" >
+            </br>
+            <label for="Address"><b>Address</b></label>
+            </br>
+            <textarea name="Address" rows="4" cols="50" placeholder="Enter  Address"></textarea>
+            </br><button>update</button>
+        </div>
+    </form>
+    <form action ="removeuser" method = "get">
+        <div class="container">
+            </br> <button class="delete">Delete</button>
+        </div>
+    </form>
+</section>
